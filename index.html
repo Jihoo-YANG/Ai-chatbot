@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #004aad, #ffd700);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+    header a {
+      margin-right: 30px;
+      text-decoration: none;
+      color: #004aad;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    header a:hover {
+      color: #ffd700;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(0,74,173,0.9), rgba(255,215,0,0.9));
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Main Layout */
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 100px 40px 40px;
+    }
+    .left-image {
+      flex: 1 1 40%;
+      padding-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .left-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .left-image img:hover {
+      transform: scale(1.05);
+    }
+
+    .right-content {
+      flex: 1 1 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+    .section h2 {
+      margin-top: 0;
+      color: #004aad;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(255,255,255,0.85);
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+      .left-image, .right-content {
+        flex: 1 1 100%;
+        padding: 0;
+      }
+      .left-image {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="#home">Home</a>
+    <a href="#about">About AI</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Welcome to the AI Homepage</h1>
+      <p>Explore the world of Artificial Intelligence: its history, applications, and the future it shapes for humanity.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="left-image">
+      <img src="ai-image.jpg" alt="AI related image">
+    </div>
+    <div class="right-content">
+      <div class="section">
+        <h2>Introduction to AI</h2>
+        <p>Artificial Intelligence is the simulation of human intelligence processes by machines. Learn about its origins and evolution over time.</p>
+      </div>
+      <div class="section">
+        <h2>Applications of AI</h2>
+        <p>From healthcare to finance, AI is transforming industries. Discover real-world examples of how AI is making an impact today.</p>
+      </div>
+      <div class="section">
+        <h2>Future and Ethics</h2>
+        <p>AI raises important ethical questions. Explore the challenges and opportunities that lie ahead as technology continues to advance.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 AI Homepage Project | Student Learning Resource
+  </footer>
+
+  <!-- JavaScript: Header color change on scroll -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(0, 74, 173, 0.9)';
+        header.style.color = '#fff';
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.85)';
+        header.style.color = '#000';
+      }
+    });
+  </script>
+</body>
+</html>
